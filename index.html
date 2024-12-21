@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Open Directory Finder</title>
+
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="src/css/main.css" />
+    <link rel="stylesheet" href="src/css/components/search.css" />
+    <link rel="stylesheet" href="src/css/components/buttons.css" />
+    <link rel="stylesheet" href="src/css/components/footer.css" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JavaScript Module -->
+    <script type="module" src="src/js/main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="theme-toggle">
+          <button id="themeToggle" aria-label="Toggle dark mode">
+            <span class="material-icons">dark_mode</span>
+          </button>
+        </div>
+        <h1>
+          <span class="material-icons">search</span>
+          Advanced Open Directory Finder
+        </h1>
+        <p class="subtitle">
+          Find and discover open directories across the web
+        </p>
+      </header>
+
+      <main>
+        <form id="searchForm">
+          <div class="search-options">
+            <div class="search-box">
+              <span class="material-icons search-icon">search</span>
+              <input
+                type="text"
+                id="searchQuery"
+                placeholder="Enter your search query..."
+                required
+                aria-label="Search query"
+              />
+            </div>
+
+            <div class="advanced-options">
+              <div class="option-group">
+                <label>
+                  <span class="material-icons">description</span>
+                  File Type
+                </label>
+                <select id="fileType" aria-label="File type">
+                  <option value="any">Any Type</option>
+                  <option value="pdf">PDF</option>
+                  <option value="doc|docx">Word Document</option>
+                  <option value="xls|xlsx">Excel</option>
+                  <option value="ppt|pptx">PowerPoint</option>
+                  <option value="txt">Text File</option>
+                  <option value="zip|rar">Archives</option>
+                  <option value="mp3">Audio</option>
+                  <option value="mp4|avi|mkv">Video</option>
+                  <option value="jpg|jpeg|png">Images</option>
+                </select>
+              </div>
+
+              <div class="option-group">
+                <label>
+                  <span class="material-icons">folder</span>
+                  Search In
+                </label>
+                <select id="searchLocation" aria-label="Search location">
+                  <option value="">Anywhere</option>
+                  <option value="inurl:ftp">FTP Servers</option>
+                  <option value="inurl:drive">Google Drive</option>
+                  <option value="inurl:index.of">Directory Listings</option>
+                  <option value="inurl:download">Download Pages</option>
+                </select>
+              </div>
+
+              <div class="checkbox-group">
+                <label class="modern-checkbox">
+                  <input type="checkbox" id="exactMatch" />
+                  <span class="checkmark"></span>
+                  <span class="label-text">
+                    <span class="material-icons">format_quote</span>
+                    Exact Match
+                  </span>
+                </label>
+                <label class="modern-checkbox">
+                  <input type="checkbox" id="excludeDownloadSites" />
+                  <span class="checkmark"></span>
+                  <span class="label-text">
+                    <span class="material-icons">block</span>
+                    Exclude Download Sites
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-group">
+            <button type="submit" class="primary">
+              <span class="material-icons">search</span>
+              Search
+            </button>
+            <button
+              type="button"
+              onclick="window.app.toggleAdvancedOptions()"
+              class="secondary"
+            >
+              <span class="material-icons">tune</span>
+              Advanced Options
+            </button>
+          </div>
+        </form>
+
+        <div id="searchHistory" class="search-history"></div>
+      </main>
+
+      <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>About</h4>
+            <p>
+              Advanced Open Directory Finder helps you discover publicly
+              accessible files across the internet using advanced search
+              techniques.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  onclick="window.app.toggleAdvancedOptions(); return false;"
+                  >Advanced Search</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="window.app.clearHistory(); return false;"
+                  >Clear History</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/rajux75" target="_blank">GitHub</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Disclaimer</h4>
+            <p>
+              This tool is for educational purposes only. Please respect
+              copyright and terms of use for any files you find.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 Open Directory Finder. Made with
+            <span class="material-icons heart">favorite</span>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
